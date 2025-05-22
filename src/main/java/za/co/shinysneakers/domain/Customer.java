@@ -24,6 +24,7 @@ public class Customer {
         lastName = builder.lastName;
         email = builder.email;
         mobile = builder.mobile;
+        address = builder.address;
     }
     public String getCustomerId() {
         return customerId;
@@ -81,12 +82,14 @@ public class Customer {
             this.mobile = mobile;
             return this;
         }
+
         public Builder copy(Customer customer) {
             this.customerId = customer.customerId;
             this.firstName = customer.firstName;
             this.lastName = customer.lastName;
             this.email = customer.email;
             this.mobile = customer.mobile;
+            this.address = customer.address;
             return this;
         }
         public Customer build() {return new Customer(this);}

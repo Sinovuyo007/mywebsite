@@ -6,9 +6,10 @@ import jakarta.persistence.Id;
 @Entity
 public class HomeAddress {
     @Id
-    private long addresId;
+    private long addressId;
     private String streetNumber;
     private String streetName;
+    private String surburb;
     private String city;
     private String province;
     private String country;
@@ -17,16 +18,17 @@ public class HomeAddress {
     protected HomeAddress() {}
 
     private HomeAddress(Builder builder) {
-        this.addresId = builder.addresId;
+        this.addressId = builder.addressId;
         this.streetNumber = builder.streetNumber;
         this.streetName = builder.streetName;
+        this.surburb = builder.surburb;
         this.city = builder.city;
         this.province = builder.province;
         this.country = builder.country;
         this.postalCode = builder.postalCode;
     }
-    public long getAddresId() {
-        return addresId;
+    public long getAddressId() {
+        return addressId;
     }
 
     public String getStreetNumber() {
@@ -35,6 +37,10 @@ public class HomeAddress {
 
     public String getStreetName() {
         return streetName;
+    }
+
+    public String getSurburb() {
+        return surburb;
     }
 
     public String getCity() {
@@ -53,15 +59,16 @@ public class HomeAddress {
         return postalCode;
     }
     public static class Builder {
-        private long addresId;
+        private long addressId;
         private String streetNumber;
         private String streetName;
+        private String surburb;
         private String city;
         private String province;
         private String country;
         private int postalCode;
-        public Builder setAddresId(long addresId) {
-            this.addresId = addresId;
+        public Builder setAddressId(long addressId) {
+            this.addressId = addressId;
             return this;
         }
         public Builder setStreetNumber(String streetNumber) {
@@ -70,6 +77,10 @@ public class HomeAddress {
         }
         public Builder setStreetName(String streetName) {
             this.streetName = streetName;
+            return this;
+        }
+        public Builder setSurburb(String surburb) {
+            this.surburb = surburb;
             return this;
         }
 
@@ -93,9 +104,10 @@ public class HomeAddress {
             return this;
         }
         public Builder copy(HomeAddress homeAddress) {
-            this.addresId = homeAddress.addresId;
+            this.addressId = homeAddress.addressId;
             this.streetNumber = homeAddress.streetNumber;
             this.streetName = homeAddress.streetName;
+            this.surburb = homeAddress.surburb;
             this.city = homeAddress.city;
             this.province = homeAddress.province;
             this.country = homeAddress.country;

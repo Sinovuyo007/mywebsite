@@ -12,7 +12,7 @@ public class Helper {
     public static String generateID(){return UUID.randomUUID().toString();}
 
     // Todo: isValidPostalCode method - 4 digits with range 1000 to 9999
-    public static boolean isValidPostalCode(short postalCode) {
+    public static boolean isValidPostalCode(int postalCode) {
         if (postalCode < 1000 || postalCode > 9999) {
             return false;
         }
